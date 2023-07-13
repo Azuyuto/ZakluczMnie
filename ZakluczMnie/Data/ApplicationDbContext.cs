@@ -47,7 +47,47 @@ namespace ZakluczMnie.Data
                 {
                     Id = Guid.NewGuid(),
                     Number = 2,
-                    Url = "Next",
+                    Url = "Nic",
+                    Users = new List<AspNetUserRiddle>()
+                }
+            );
+
+            modelBuilder.Entity<Riddle>().HasData(
+                new Riddle
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 3,
+                    Url = "Orzel",
+                    Users = new List<AspNetUserRiddle>()
+                }
+            );
+
+            modelBuilder.Entity<Riddle>().HasData(
+                new Riddle
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 4,
+                    Url = "StrusAfrykanski",
+                    Users = new List<AspNetUserRiddle>()
+                }
+            );
+
+            modelBuilder.Entity<Riddle>().HasData(
+                new Riddle
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 5,
+                    Url = "Bajka",
+                    Users = new List<AspNetUserRiddle>()
+                }
+            );
+
+            modelBuilder.Entity<Riddle>().HasData(
+                new Riddle
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 6,
+                    Url = "Szpaku",
                     Users = new List<AspNetUserRiddle>()
                 }
             );

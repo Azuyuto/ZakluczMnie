@@ -9,11 +9,11 @@ using ZakluczMnie.Data;
 
 #nullable disable
 
-namespace ZakluczMnie.Data.Migrations
+namespace ZakluczMnie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230713095523_Riddles")]
-    partial class Riddles
+    [Migration("20230713141043_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -272,6 +272,44 @@ namespace ZakluczMnie.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Riddles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("0c6d3a5c-ea45-43df-ba6c-7eb6a4d67663"),
+                            Number = 1,
+                            Url = "Start"
+                        },
+                        new
+                        {
+                            Id = new Guid("7b0b753c-0a83-49e4-a353-3ff4bda73c34"),
+                            Number = 2,
+                            Url = "Nic"
+                        },
+                        new
+                        {
+                            Id = new Guid("52a93a62-d820-4438-a25b-ec9960a2617c"),
+                            Number = 3,
+                            Url = "Orzel"
+                        },
+                        new
+                        {
+                            Id = new Guid("79f90897-71c5-4e87-ab1c-724fe4f4616a"),
+                            Number = 4,
+                            Url = "StrusAfrykanski"
+                        },
+                        new
+                        {
+                            Id = new Guid("cf1166eb-30d4-4788-9ff6-e061315ad489"),
+                            Number = 5,
+                            Url = "Bajka"
+                        },
+                        new
+                        {
+                            Id = new Guid("79783d19-dae2-4760-9c0e-86d1b8b0ac1a"),
+                            Number = 6,
+                            Url = "Szpaku"
+                        });
                 });
 
             modelBuilder.Entity("ZakluczMnie.Data.ApplicationUser", b =>

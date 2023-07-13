@@ -26,12 +26,41 @@ namespace ZakluczMnie.Controllers
             return View();
         }
 
-        public IActionResult Next()
+        public IActionResult Nic()
+        {
+            SetAndContinue(RiddleEnum.Start, RiddleEnum.Nic);
+            return View();
+        }
+
+        public IActionResult Orzel()
+        {
+            SetAndContinue(RiddleEnum.Nic, RiddleEnum.Orzel);
+            return View();
+        }
+
+        public IActionResult StrusAfrykanski()
+        {
+            SetAndContinue(RiddleEnum.Orzel, RiddleEnum.StrusAfrykanski);
+            return View();
+        }
+
+        public IActionResult Bajka()
+        {
+            SetAndContinue(RiddleEnum.StrusAfrykanski, RiddleEnum.Bajka);
+            return View();
+        }
+
+        public IActionResult Szpaku()
+        {
+            SetAndContinue(RiddleEnum.Bajka, RiddleEnum.Szpaku);
+            return View();
+        }
+
+        private void SetAndContinue(RiddleEnum set, RiddleEnum con)
         {
             var userId = _userManager.GetUserAsync(User).Result.Id;
-            _riddleRepository.CompleteUserRiddle(userId, (int)RiddleEnum.Start);
-            _riddleRepository.StartUserRiddle(userId, (int)RiddleEnum.Next);
-            return View();
+            _riddleRepository.CompleteUserRiddle(userId, (int)set);
+            _riddleRepository.StartUserRiddle(userId, (int)con);
         }
     }
 }

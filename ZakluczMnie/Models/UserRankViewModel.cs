@@ -31,6 +31,7 @@ namespace ZakluczMnie.Models
             Riddles = riddleRepository.GetUserRiddles(UserId).Select(a => new RiddleRankViewModel()
             { 
                 Number = a.Riddle.Number,
+                IsCompleted = a.DateEnded.HasValue,
                 Time = ((a.DateEnded ?? DateTime.Now) - a.DateStarted)
             }).ToList();
         }

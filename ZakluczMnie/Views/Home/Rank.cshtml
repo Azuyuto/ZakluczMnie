@@ -25,7 +25,7 @@
             <tr>
                 <td>@Html.Raw(i)</td>
                 <td>@Html.Raw(item.Email)</td>
-                <td>@Html.Raw(item.Riddles.Count())</td>
+                <td>@Html.Raw(item.Riddles.Where(a => a.IsCompleted).Count())</td>
                 <td>@Html.Raw(item.SummaryTime.ToString(@"hh\:mm\:ss"))</td>
             </tr>
             i++;

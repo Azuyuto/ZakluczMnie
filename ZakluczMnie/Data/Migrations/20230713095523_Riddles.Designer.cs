@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZakluczMnie.Data;
 
@@ -11,9 +12,11 @@ using ZakluczMnie.Data;
 namespace ZakluczMnie.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230713095523_Riddles")]
+    partial class Riddles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -269,20 +272,6 @@ namespace ZakluczMnie.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Riddles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("05099cbc-9500-48a6-b5a5-de15e9a9bba5"),
-                            Number = 1,
-                            Url = "Start"
-                        },
-                        new
-                        {
-                            Id = new Guid("f2b6ed62-902c-4002-a74d-c846b4feb74f"),
-                            Number = 2,
-                            Url = "Next"
-                        });
                 });
 
             modelBuilder.Entity("ZakluczMnie.Data.ApplicationUser", b =>

@@ -1,0 +1,34 @@
+﻿@model ZakluczMnie.Models.RankViewModel
+
+@{
+    ViewData["Title"] = "Ranking";
+}
+<h1>Ranking</h1>
+
+<p>Lista graczy i ich punkty.</p>
+<p>Aktualna liczba zagadek: @Html.Raw(Model.Riddles.Count())</p>
+<table class="table table-responsive text-light">
+    <thead>
+        <tr>
+            <th>Lp</th>
+            <th>Użytkownik</th>
+            <th>Ilość zadań</th>
+            <th>Łączny czas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var i = 1; 
+        }
+        @foreach(var item in Model.Users.OrderByDescending(a => a.Riddles.Count()).ThenBy(a => a.SummaryTime))
+        {
+            <tr>
+                <td>@Html.Raw(i)</td>
+                <td>@Html.Raw(item.Email)</td>
+                <td>@Html.Raw(item.Riddles.Count())</td>
+                <td>@Html.Raw(item.SummaryTime.ToString(@"hh\:mm\:ss"))</td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>

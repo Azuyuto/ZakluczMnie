@@ -1,5 +1,7 @@
-html {
+html, body {
   font-size: 14px;
+  background-color: black;
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -19,4 +21,8 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+.form-floating > label{
+    color: black;
 }

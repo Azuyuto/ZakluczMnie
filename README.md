@@ -12,4 +12,4 @@ lub
 
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/Azuyuto/ZakluczMnie/master/Preview/Riddle-1.PNG)
+![App Screenshot](http://raw.githubusercontent.com/Azuyuto/ZakluczMnie/master/Preview/Riddle-1.PNG)
